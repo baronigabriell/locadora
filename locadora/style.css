@@ -1,0 +1,228 @@
+html{
+    scroll-behavior: smooth;
+    margin-bottom: 0;
+}
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+body main{
+    flex: 1 1 0;
+}
+header{
+    background-color: #295135;
+    color: white;
+    font-family: poppins;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4%;
+    align-items: center;
+}
+body{
+    position: relative; 
+    min-height: 100vh;
+    margin: 0px;
+    font-family: poppins;
+    color: #FFFAFF;
+    background-color: #FFFAFF;
+}
+#img-1{
+    background-image: url(../img/mulhersorrindo.jpg);
+}
+
+#img-2{
+    background-image: url(../img/manutencao.jpg);
+}
+
+#img-3{
+    background-image: url(../img/servico.jpg);
+}
+#logo{
+    width: 120px;
+    height: auto;
+    margin-top: 5%;
+}
+#overlay-home{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 795px; 
+    width: 1519.2px;
+    background: linear-gradient(to right, #3d714c, transparent);
+    z-index: 2;
+}
+#product-class{
+    position: relative;
+    display: inline-block;
+}
+.overlay-text{
+    margin-left: 12%;
+    margin-top: 10%;
+}
+button{
+    font-family: poppins;
+    font-size: 15px;
+    width: 15%;
+    height: 7%;
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: #295135;
+    color: white;
+    margin: 1%;
+    margin-left: 12%;
+}
+button:hover{
+    background-color: white;
+    color: #295135;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+button:not(:hover){
+    background-color: #295135;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+button:active{
+    transform: scale(0.9);
+}
+nav a{
+    text-decoration: none;
+    border-right: 2px solid white;
+    padding: 0 15px;
+}
+nav a:last-child{
+    border-right: none;
+}
+.text-nav{
+    display: inline;
+    color: white;
+    font-family: poppins;
+    font-size: 15px;
+}
+.text-nav:hover{
+    color: #24a84c;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+.text-nav:not(:hover){
+    color: white;
+    transition: all 0.2s ease-in;
+}
+#quadrado-azul{
+    background-color: #295135;
+    width: 30%;
+    height: 40%;
+    padding: 60px;
+    box-sizing: border-box;
+    color: #e0e0e0;
+}
+h1{
+    margin: 0px 0px;
+}
+#cards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -20%;
+    z-index: 3;
+    background: linear-gradient(to top, #fffaff 70%, transparent);
+}
+#cards img{
+    height: 400px;
+    width: auto;
+    border-radius: 0 20px 20px 0;
+}
+#contato {
+    position: relative; 
+    z-index: 1;
+}
+#contato img {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 0; 
+}
+div.single-input{
+    width: 100%;
+    margin: 30px 0px;
+    position: relative;
+}
+div.single-input .label{
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    color: white;
+    cursor: text;
+    transition: 0.4s ease-in-out;
+}
+div.single-input .input{
+    width: 100%;
+    color: white;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 15px;
+}
+div.single-input .input:focus,
+div.single-input .input:valid{
+    border-bottom: 2px solid #24a84c;
+}
+div.single-input .input:focus ~ label,
+div.single-input .input:valid ~ label{
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #24a84c;
+    transition: 0.4s ease-in-out;
+}
+.form {
+    margin: 0 auto; 
+    background-color: #295135;
+    padding: 50px;
+    border-radius: 30px;
+    width: 30%;
+    z-index: 2;
+}
+input{
+    background-color: #295135;
+    font-family: poppins;
+}
+.botao{
+    font-family: poppins;
+    font-size: 15px;
+    width: 20%;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #295135;
+    color: white;
+    margin: 1%;
+}
+.botao:hover{
+    background-color: white;
+    color: #295135;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.botao:not(:hover){
+    background-color: #295135;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+.botao:active{
+    transform: scale(0.9);
+}
+footer {
+    background-color: #295135;
+    color: white;
+    height: 115px;
+    font-family: poppins;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 4%;
+}
