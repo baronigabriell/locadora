@@ -34,7 +34,7 @@
                         <button>Locações</button>
                     </a>
                     <br>
-                    <a href="cadastroservico.php">
+                    <a href="veiculos.php">
                         <button>Cadastro de veículos</button>
                     </a>
                 </div>
