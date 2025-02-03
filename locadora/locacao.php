@@ -56,7 +56,7 @@
             </div>
             <button type="submit" name="locar" class="botao">Locar</button>
         </form>
-        <a href="consultacliente.php">
+        <a href="consultalocacao.php">
             <input class="botao" type="submit" value="Consultar">
         </a>
     </div>

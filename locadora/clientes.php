@@ -39,7 +39,7 @@
                 <label for="nomex" class="label">Nome:</label>
             </div>
             <div class="single-input">
-                <input type="text" id="tecnicox" name="cpf" class="input" required>
+                <input type="text" name="cpf" id="cpf" class="input" required>
                 <label for="cpfx" class="label">CPF:</label>
             </div>
             <div class="single-input">
@@ -61,3 +61,16 @@
         </a>
     </div>
 </body>
+<script>
+    const cpf = document.querySelector('#cpf');
+
+    cpf.addEventListener('keypress', () => {
+        cpflength = cpf.value.length;
+
+        if (cpflength === 3 || cpflength === 7) {
+            cpf.value += '.';
+        } else if (cpflength === 11) {
+            cpf.value += '-';
+        }
+    });
+</script>

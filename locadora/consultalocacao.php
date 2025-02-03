@@ -29,7 +29,7 @@ if (!empty($_POST['cpfx'])) {
                     <input type="text" id="cpf" name="cpfx" class="input" value="<?php echo htmlspecialchars($busca); ?>" required>
                     <label for="nomex" class="label">CPF do cliente</label>
                     <button type="submit" class="pesquisar">
-                        <img class="lupa" src="lupa.png" alt="lupa">
+                        <img class="lupa" src="../img/lupa.png" alt="lupa">
                     </button>
                 </div>
                 <?php
@@ -37,22 +37,21 @@ if (!empty($_POST['cpfx'])) {
                     echo "<table>";
                     echo "<div>";
                     echo "<tr><th>Nome</th><th>CPF</th><th>Telefone</th><th>Ingresso</th></tr>";
-                    $query = mysqli_query($conexao, "SELECT nome, cpf, telefone, email, endereco FROM clientes WHERE cpf LIKE '%$busca%' GROUP BY 1");
+                    $query = mysqli_query($conexao, "SELECT bil_cod, bil_cpf, bil_nome, bil_telefone, bil_ingresso FROM bilheteria WHERE bil_cpf LIKE '%$busca%' GROUP BY 1");
                     if (mysqli_num_rows($query) > 0) {
                         while ($saida = mysqli_fetch_array($query)) {
-                            $nome = $saida['nome'];
-                            $cpf = $saida['cpf'];
-                            $telefone = $saida['telefone'];
-                            $email = $saida['email'];
-                            $endereco = $saida['endereco'];
+                            $codigo = $saida['bil_cod'];
+                            $cpf = $saida['bil_cpf'];
+                            $nome = $saida['bil_nome'];
+                            $telefone = $saida['bil_telefone'];
+                            $ingresso = $saida['bil_ingresso'];
                             echo "<tr>";
                             echo "<tr>";
                             echo "<td class='titulo'>" . htmlspecialchars($nome) . "</td>";
                             echo "<td class='titulo'>" . htmlspecialchars($cpf) . "</td>";
                             echo "<td class='titulo'>" . htmlspecialchars($telefone) . "</td>";
-                            echo "<td class='titulo'>" . htmlspecialchars($email) . "</td>";
-                            echo "<td class='titulo'>" . htmlspecialchars($endereco) . "</td>";
-                            echo "<td id='excluir'><a href='exclusaocliente.php?id=<?php echo $codigo; ?>'>
+                            echo "<td class='titulo'>" . htmlspecialchars($ingresso) . "</td>";
+                            echo "<td id='excluir'><a href='exclusaocan.php?id=<?php echo $codigo; ?>'>
                             <button class='deleteButton'>
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
@@ -124,25 +123,25 @@ if (!empty($_POST['cpfx'])) {
         position: relative;
     }
     div.single-input .input {
-        background-color: #295135;
-        border-bottom: 2px solid white;
+        background-color: #f3edf3;
+        border-bottom: 2px solid black;
         width: 100%;
-        color: white;
+        color: black;
         position: relative;
     }
     div.single-input .label {
-        color: white;
+        color: black;
     }
     .box {
         justify-content: space-between;
-        background-color: #295135;
+        background-color: #f3edf3;
         padding: 30px 45px;
         border-radius: 40px 40px 0 0;
         height: 500px;
         align-self: flex-start;
         position: absolute;
         bottom: 0;
-        color: white;
+        color: black;
     }
     form .pesquisar {
         position: absolute;

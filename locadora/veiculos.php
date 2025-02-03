@@ -57,7 +57,7 @@
             </div>
             <button type="submit" name="cadastrar" class="botao">Cadastrar</button>
         </form>
-        <a href="consultacliente.php">
+        <a href="consultaveiculos.php">
             <input class="botao" type="submit" value="Consultar">
         </a>
     </div>
