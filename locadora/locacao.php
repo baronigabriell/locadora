@@ -36,7 +36,7 @@
         </nav>
     </header>
     <div class="form" style="position: absolute; top: 58%; left: 50%; transform: translate(-50%,-50%);">
-        <h1>Cadastro de clientes</h1>
+        <h1>Cadastro de locação</h1>
         <form method="POST" action="">
             <div class="single-input">
                 <input type="text" id="servicox" name="id_cliente" class="input" required>

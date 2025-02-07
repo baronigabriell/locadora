@@ -24,12 +24,12 @@ if (!empty($_POST['placa'])) {
 <body>
     <div>
         <form method="POST" action="" style="width: 100%; display: flex; justify-content: center;">
-            <div class="box" style="width: 32%; bottom: 0;">
+            <div class="box" style="width: 50%; bottom: 0;">
                 <div class="single-input">
                     <input type="text" id="cpf" name="cpfx" class="input" value="<?php echo htmlspecialchars($busca); ?>" required>
-                    <label for="nomex" class="label">CPF do cliente</label>
+                    <label for="nomex" class="label">Placa do carro</label>
                     <button type="submit" class="pesquisar">
-                        <img class="lupa" src="../img/lupa.png" alt="lupa">
+                        <img class="lupa" src="lupa.png" alt="lupa">
                     </button>
                 </div>
                 <?php
@@ -40,6 +40,7 @@ if (!empty($_POST['placa'])) {
                     $query = mysqli_query($conexao, "SELECT modelo, marca, ano, placa, valor_diaria FROM veiculos WHERE placa LIKE '%$busca%' GROUP BY 1");
                     if (mysqli_num_rows($query) > 0) {
                         while ($saida = mysqli_fetch_array($query)) {
+                            $codigo = $saida[0];
                             $modelo = $saida['modelo'];
                             $marca = $saida['marca'];
                             $ano = $saida['ano'];
@@ -99,19 +100,6 @@ if (!empty($_POST['placa'])) {
         </form>
     </div>
 </body>
-<script>
-    const cpf = document.querySelector('#cpf');
-
-    cpf.addEventListener('keypress', () => {
-        cpflength = cpf.value.length;
-
-        if (cpflength === 3 || cpflength === 7) {
-            cpf.value += '.';
-        } else if (cpflength === 11) {
-            cpf.value += '-';
-        }
-    });
-</script>
 <style>
     body {
         position: relative;
@@ -123,25 +111,25 @@ if (!empty($_POST['placa'])) {
         position: relative;
     }
     div.single-input .input {
-        background-color: #f3edf3;
-        border-bottom: 2px solid black;
+        background-color: #295135;
+        border-bottom: 2px solid white;
         width: 100%;
-        color: black;
+        color: white;
         position: relative;
     }
     div.single-input .label {
-        color: black;
+        color: white;
     }
     .box {
         justify-content: space-between;
-        background-color: #f3edf3;
+        background-color: #295135;
         padding: 30px 45px;
         border-radius: 40px 40px 0 0;
         height: 500px;
         align-self: flex-start;
         position: absolute;
         bottom: 0;
-        color: black;
+        color: white;
     }
     form .pesquisar {
         position: absolute;
@@ -166,7 +154,7 @@ if (!empty($_POST['placa'])) {
         padding: 10px;
         background-color: #e6e6e6;
         border-radius: 10px;
-        color: black;
+        color: white;
         text-align: center;
     }
     table {
@@ -179,7 +167,7 @@ if (!empty($_POST['placa'])) {
         color: #666;
     }
     table th {
-        background-color: #f3edf3;
+        background-color: #295135;
         text-align: left;
     }
     .deleteButton {

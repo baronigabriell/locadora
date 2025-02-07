@@ -1,23 +1,3 @@
-<?php
-    include 'conexao.php';
-
-    if(isset($_POST['cadastrar'])){
-        $modelo = $_POST['modelo'];
-        $marca = $_POST['marca'];
-        $ano = $_POST['ano'];
-        $placa = $_POST['placa'];
-        $valor_diaria = $_POST['valor_diaria'];
-
-        $sql = "INSERT INTO veiculos (modelos, marca, ano, placa, valor_diaria)
-        VALUES ('$modelo','$marca','$ano','$placa','$valor_diaria')";
-        
-        if(mysqli_query($conexao, $sql)){
-            echo "Veículo cadastrado com sucesso!";
-        }else{
-            echo "Erro: " . mysqli_error($conexao);
-        }
-    }
-?>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -33,7 +13,7 @@
         </nav>
     </header>
     <div class="form" style="position: absolute; top: 58%; left: 50%; transform: translate(-50%,-50%);">
-        <h1>Cadastro de clientes</h1>
+        <h1>Cadastro de veículos</h1>
         <form method="POST" action="">
             <div class="single-input">
                 <input type="text" id="servicox" name="marca" class="input" required>
@@ -61,4 +41,24 @@
             <input class="botao" type="submit" value="Consultar">
         </a>
     </div>
+    <?php
+        include 'conexao.php';
+
+        if(isset($_POST['cadastrar'])){
+            $modelo = $_POST['modelo'];
+            $marca = $_POST['marca'];
+            $ano = $_POST['ano'];
+            $placa = $_POST['placa'];
+            $valor_diaria = $_POST['valor_diaria'];
+
+            $sql = "INSERT INTO veiculos (modelos, marca, ano, placa, valor_diaria)
+            VALUES ('$modelo','$marca','$ano','$placa','$valor_diaria')";
+            
+            if(mysqli_query($conexao, $sql)){
+                echo "Veículo cadastrado com sucesso!";
+            }else{
+                echo "Erro: " . mysqli_error($conexao);
+            }
+        }
+    ?>
 </body>

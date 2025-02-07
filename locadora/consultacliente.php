@@ -24,7 +24,7 @@ if (!empty($_POST['cpfx'])) {
 <body>
     <div>
         <form method="POST" action="" style="width: 100%; display: flex; justify-content: center;">
-            <div class="box" style="width: 32%; bottom: 0;">
+            <div class="box" style="width: 50%; bottom: 0;">
                 <div class="single-input">
                     <input type="text" id="cpf" name="cpfx" class="input" value="<?php echo htmlspecialchars($busca); ?>" required>
                     <label for="nomex" class="label">CPF do cliente</label>
@@ -36,10 +36,11 @@ if (!empty($_POST['cpfx'])) {
                 if (!empty($busca)) {
                     echo "<table>";
                     echo "<div>";
-                    echo "<tr><th>Nome</th><th>CPF</th><th>Telefone</th><th>Ingresso</th></tr>";
+                    echo "<tr><th>Nome</th><th>CPF</th><th>Telefone</th><th>E-mail</th><th>Endereço</th></tr>";
                     $query = mysqli_query($conexao, "SELECT nome, cpf, telefone, email, endereco FROM clientes WHERE cpf LIKE '%$busca%' GROUP BY 1");
                     if (mysqli_num_rows($query) > 0) {
                         while ($saida = mysqli_fetch_array($query)) {
+                            $codigo = $saida[0];
                             $nome = $saida['nome'];
                             $cpf = $saida['cpf'];
                             $telefone = $saida['telefone'];
@@ -165,7 +166,7 @@ if (!empty($_POST['cpfx'])) {
     .resultado {
         margin-top: 20px;
         padding: 10px;
-        background-color: #e6e6e6;
+        background-color: #295135;
         border-radius: 10px;
         color: black;
         text-align: center;
@@ -177,10 +178,10 @@ if (!empty($_POST['cpfx'])) {
     }
     table th, table td {
         padding: 8px;
-        color: #666;
+        color: #FFFFFF;
     }
     table th {
-        background-color: #f3edf3;
+        background-color: #295135;
         text-align: left;
     }
     .deleteButton {

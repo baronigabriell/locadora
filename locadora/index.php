@@ -22,9 +22,9 @@
             <div id="product-class">
                 <img src="locadora.jpeg" alt="" style="height: auto; width: 1519.2px; display: block;">
                 <div id="overlay-home">
-                    <h1 class="overlay-text">Diversão para todas as idades!</h1>
+                    <h1 class="overlay-text">Alugue o carro dos seus sonhos com facilidade e confiança!</h1>
                     <p class="overlay-text" style="margin-top: 0; width: 40%; text-align: justify;">
-                    Prepare-se para uma experiência refrescante e cheia de emoção no SPLASH, a atração aquática mais emocionante do nosso parque de diversões! Aqui, adrenalina e diversão se encontram em um passeio que promete molhar até os mais corajosos.
+                    Na <b>locafel:)z</b>, oferecemos uma frota completa de carros para atender todas as suas necessidades de viagem, seja para um passeio rápido, uma viagem de negócios ou uma aventura mais longa. Com veículos bem cuidados, diversos modelos e planos flexíveis, garantimos que você tenha a melhor experiência ao dirigir. Alugue conosco e aproveite conforto, segurança e economia em cada quilômetro!
                     </p>
                     <a href="clientes.php">
                         <button>Cadastro de clientes</button>
@@ -68,9 +68,26 @@
     </main>
 </body>
 <footer>
-        <a href="index.php" style="font-size: 0;">
-            <img src="logo.png" alt="logotipo da locafeliz" id="logo" style="margin-top: 0;">    
-        </a>
-        <p style="position: absolute; left: 50%; transform: translate(-50%,0);">locafel:)z &copy 2025 - Todos os direitos reservados</p>
-    </footer>
+    <a href="index.php" style="font-size: 0;">
+        <img src="logo.png" alt="logotipo da locafeliz" id="logo" style="margin-top: 0;">    
+    </a>
+    <p style="position: absolute; left: 50%; transform: translate(-50%,0);">locafel:)z &copy 2025 - Todos os direitos reservados</p>
+</footer>
+<script>
+    const telefone = document.querySelector('#telefonex');
+
+    telefone.addEventListener('keypress', () => {
+        telefonelength = telefone.value.length;
+
+        if (telefonelength === 0) {
+            telefone.value += '(';
+        }else if (telefonelength === 3) {
+            telefone.value += ')';
+        } else if (telefonelength === 5) {
+            telefone.value += ' ';
+        } else if (telefonelength === 10) {
+            telefone.value += '-';
+        }
+    });
+</script>
 </html>
